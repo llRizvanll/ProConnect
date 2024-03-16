@@ -1,0 +1,13 @@
+current directory: /Users/rizvan/Thor/react-native-apps/ProConnect/ProConnect/vendor/bundle/ruby/2.7.0/gems/json-2.7.1/ext/json
+/Users/rizvan/.rvm/rubies/ruby-2.7.5/bin/ruby -I /Users/rizvan/.rvm/rubies/ruby-2.7.5/lib/ruby/site_ruby/2.7.0 extconf.rb
+creating Makefile
+
+current directory: /Users/rizvan/Thor/react-native-apps/ProConnect/ProConnect/vendor/bundle/ruby/2.7.0/gems/json-2.7.1/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20240316-19678-1kkdi9u sitelibdir\=./.gem.20240316-19678-1kkdi9u clean
+
+current directory: /Users/rizvan/Thor/react-native-apps/ProConnect/ProConnect/vendor/bundle/ruby/2.7.0/gems/json-2.7.1/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20240316-19678-1kkdi9u sitelibdir\=./.gem.20240316-19678-1kkdi9u
+make: Nothing to be done for `all'.
+
+current directory: /Users/rizvan/Thor/react-native-apps/ProConnect/ProConnect/vendor/bundle/ruby/2.7.0/gems/json-2.7.1/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20240316-19678-1kkdi9u sitelibdir\=./.gem.20240316-19678-1kkdi9u install

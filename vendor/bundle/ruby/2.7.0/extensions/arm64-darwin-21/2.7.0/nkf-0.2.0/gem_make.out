@@ -1,0 +1,16 @@
+current directory: /Users/rizvan/Thor/react-native-apps/ProConnect/ProConnect/vendor/bundle/ruby/2.7.0/gems/nkf-0.2.0/ext/nkf
+/Users/rizvan/.rvm/rubies/ruby-2.7.5/bin/ruby -I /Users/rizvan/.rvm/rubies/ruby-2.7.5/lib/ruby/site_ruby/2.7.0 extconf.rb
+creating Makefile
+
+current directory: /Users/rizvan/Thor/react-native-apps/ProConnect/ProConnect/vendor/bundle/ruby/2.7.0/gems/nkf-0.2.0/ext/nkf
+make DESTDIR\= sitearchdir\=./.gem.20240316-19678-1ih9ngd sitelibdir\=./.gem.20240316-19678-1ih9ngd clean
+
+current directory: /Users/rizvan/Thor/react-native-apps/ProConnect/ProConnect/vendor/bundle/ruby/2.7.0/gems/nkf-0.2.0/ext/nkf
+make DESTDIR\= sitearchdir\=./.gem.20240316-19678-1ih9ngd sitelibdir\=./.gem.20240316-19678-1ih9ngd
+compiling nkf.c
+linking shared-object nkf.bundle
+ld: warning: -multiply_defined is obsolete
+
+current directory: /Users/rizvan/Thor/react-native-apps/ProConnect/ProConnect/vendor/bundle/ruby/2.7.0/gems/nkf-0.2.0/ext/nkf
+make DESTDIR\= sitearchdir\=./.gem.20240316-19678-1ih9ngd sitelibdir\=./.gem.20240316-19678-1ih9ngd install
+/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 nkf.bundle ./.gem.20240316-19678-1ih9ngd

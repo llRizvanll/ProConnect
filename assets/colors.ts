@@ -1,3 +1,4 @@
+import { lightBlue100 } from "react-native-paper/lib/typescript/styles/themes/v2/colors";
 
 
 export const colors = {
@@ -16,4 +17,5 @@ export const colors = {
     purple: '#800080',
     orange: '#FFA500',
     yellow: '#FFFF00',
+    lightBlue100: '#B3E5FC',
 };

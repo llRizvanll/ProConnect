@@ -1,4 +1,4 @@
-import { black, white } from "react-native-paper/lib/typescript/styles/themes/v2/colors";
+
 
 export const colors = {
     primary: '#0668E1',
@@ -10,4 +10,10 @@ export const colors = {
     black: '#000000',
     _1C2B33: '#1C2B33',
     _f0edf6: '#f0edf6',
+    red: '#FF0000',
+    green: '#00FF00',
+    gray: '#808080',
+    purple: '#800080',
+    orange: '#FFA500',
+    yellow: '#FFFF00',
 };

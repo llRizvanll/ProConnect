@@ -4,7 +4,7 @@ import { Text } from "react-native-paper";
 const styles = StyleSheet.create({
     container: {
         // add your container styles here
-        backgroundColor: 'blue',
+        backgroundColor: '1C2B33',
     },
     title: {
         // add your title styles here

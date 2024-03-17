@@ -1,15 +1,15 @@
 import React from "react";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
-import Feather from "react-native-vector-icons/Feather";
+import Icon from "react-native-vector-icons/Feather";
 
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar, useColorScheme } from "react-native";
 import SettingsComponent from "./src/components/SettingsComponent";
-import HomeComponent from "./src/components/HomeComponent";
 import ChatComponent from "./src/components/ChatComponent";
 import ProfileComponent from "./src/components/ProfileComponent";
 import { colors } from "./assets/colors";
+import HomeTabs from "./src/components/HomeTabs";
 
 // ... other imports ...
 
@@ -33,17 +33,18 @@ const App = () => {
         <NavigationContainer>
           <Tab.Navigator
             initialRouteName="Home"
-            activeColor={colors._f0edf6}
-            inactiveColor={colors.inactiveIconColor}
-            barStyle={{ backgroundColor: colors.primary }}
+            activeColor={colors.white}
+            inactiveColor={colors.white}
+            barStyle={{ backgroundColor: colors.black }}
           >
             <Tab.Screen
               name="Home"
-              component={HomeComponent}
+              component={HomeTabs}
               options={{
                 tabBarLabel: "Home",
+                tabBarColor: colors.white,
                 tabBarIcon: ({ color }) => (
-                  <Feather name="home" color={color} size={26} />
+                  <Icon name="home" color={colors.white} size={26} />
                 ),
               }}
             />
@@ -52,8 +53,9 @@ const App = () => {
               component={SettingsComponent}
               options={{
                 tabBarLabel: "Settings",
+                tabBarColor: colors.white,
                 tabBarIcon: ({ color }) => (
-                  <Feather name="settings" color={color} size={26} />
+                  <Icon name="settings" color={colors.white} size={26} />
                 ),
               }}
             />
@@ -62,8 +64,9 @@ const App = () => {
               component={ChatComponent}
               options={{
                 tabBarLabel: "Chat",
+                tabBarColor: colors.white,
                 tabBarIcon: ({ color }) => (
-                  <Feather name="chat" color={color} size={26} />
+                  <Icon name="message-square" color={colors.white} size={26} />
                 ),
               }}
             />
@@ -72,8 +75,9 @@ const App = () => {
               component={ProfileComponent}
               options={{
                 tabBarLabel: "Profile",
+                tabBarColor: colors.white,
                 tabBarIcon: ({ color }) => (
-                  <Feather name="person" color={color} size={26} />
+                  <Icon name="user" color={colors.white} size={26} />
                 ),
               }}
             />

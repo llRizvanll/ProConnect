@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.proconnect.app-mergeDebugResources-26:/values-my/values-my.xml",
+            "outputFile": "com.proconnect.app-mergeDebugResources-28:/values-my/values-my.xml",
             "map": [
                 {
                     "source": "/Users/rizvan/.gradle/caches/transforms-3/b3627ca143232ec2ceb6e319eb18971d/transformed/appcompat-1.6.1/res/values-my/values-my.xml",

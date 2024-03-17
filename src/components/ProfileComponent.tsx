@@ -28,7 +28,7 @@ const ProfileComponent = () => {
           <List.Item
             title={item.title}
             onPress={() => Linking.openURL(item.link)}
-            right={() => <Icon name="chevron-right" size={26} color="white" />}
+            right={() => <Icon name="arrow-right" size={26} color="black" />}
           />
         )}
       />

@@ -1,6 +1,8 @@
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import HomeComponent from './HomeComponent';
 import PopularComponent from './PopularComponent';
+import { colors } from '../../assets/colors';
+import { AppConstants } from '../utility/AppConstants';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -10,7 +12,7 @@ const HomeTabs = () => {
             tabBarPosition="top"
             screenOptions={{
                 tabBarStyle: {
-                  backgroundColor: '#fff',
+                  backgroundColor: colors.white,
                   elevation: 5, // Shadow for Android
                   shadowOpacity: 0.5, // Shadow for iOS
                   margin: 10,
@@ -19,14 +21,14 @@ const HomeTabs = () => {
                 tabBarLabelStyle: {
                   textAlign: 'center',
                   fontSize: 20,
-                  fontFamily: 'IBMPlexSans-Regular',
+                  fontFamily: AppConstants.fontFamily,
                 },
                 tabBarIndicatorStyle: {
-                  backgroundColor: '#000',
+                  backgroundColor: colors.black,
                 },
               }}
         >
-            <Tab.Screen name="Home" component={HomeComponent} />
+            <Tab.Screen name="Dashboard" component={HomeComponent} />
             <Tab.Screen name="Popular" component={PopularComponent} />
         </Tab.Navigator>
     );

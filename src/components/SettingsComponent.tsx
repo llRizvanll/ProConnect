@@ -51,7 +51,7 @@ const data = [
 const SettingsComponent = () => {
     return (
         <View style={styles.container}>
-            <Title style={styles.title}>Settings</Title>
+            <Title style={styles.title}>Bookmarks</Title>
             <FlatGrid
               itemDimension={130}
               data={data}

@@ -49,13 +49,13 @@ const App = () => {
               }}
             />
             <Tab.Screen
-              name="Settings"
+              name="Bookmarks"
               component={SettingsComponent}
               options={{
-                tabBarLabel: "Settings",
+                tabBarLabel: "Bookmarks",
                 tabBarColor: colors.white,
                 tabBarIcon: ({ color }) => (
-                  <Icon name="settings" color={colors.white} size={26} />
+                  <Icon name="bookmark" color={colors.white} size={26} />
                 ),
               }}
             />

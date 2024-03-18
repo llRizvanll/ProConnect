@@ -1,104 +1,18 @@
 import {
   View,
-  StyleSheet,
   FlatList,
   Image,
   Button,
-  TouchableHighlight,
   TouchableOpacity,
+  Alert,
 } from "react-native";
 import Modal from "react-native-modal";
-import { Text } from "react-native-paper";
+import { Text, Divider } from "react-native-paper";
 import React from "react";
-import { colors } from "../../assets/colors";
+import Icon from "react-native-vector-icons/Feather";
+import { format } from 'date-fns';
+import { HomeComponentStyles as styles} from "../styles/HomeComponentStyles";
 
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: colors._E9EBEE,
-  },
-  itemContainer: {
-    flexDirection: "column",
-    margin: 8,
-    backgroundColor: colors.white,
-    borderRadius: 2,
-    shadowColor: colors.black,
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.24,
-    shadowRadius: 2,
-    elevation: 4, // for Android
-  },
-  image: {
-    flex: 1,
-    width: "100%",
-    height: "100%",
-    minHeight: 300,
-    maxHeight: 400,
-    borderRadius: 10, // Add this line to round the corners of the image
-    borderWidth: 2, // Add this line to add a border to the image
-    borderColor: "#007BFF", // Add this line to set the color of the border to blue
-    shadowColor: "#000", // Add this line to set the color of the shadow to black
-    shadowOffset: { width: 0, height: 2 }, // Add this line to set the offset of the shadow
-    shadowOpacity: 0.25, // Add this line to set the opacity of the shadow
-    shadowRadius: 3.84, // Add this line to set the radius of the shadow
-    //elevation: 5, // Add this line to set the elevation of the image (Android only)
-  },
-  textContainer: {
-    flex: 0.5,
-    padding: 10,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
-  sharebtn: {
-    alignSelf: "flex-end",
-    backgroundColor: colors.shareButtonBackground,
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: "bold",
-    fontFamily: "IBMPlexSans-Regular",
-  },
-  description: {
-    fontSize: 14,
-    fontFamily: "IBMPlexSans-Regular",
-  },
-  tagsContainer: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    lineHeight: 20, // Add this line to make the tags look better
-    padding: 10, // Add this line to create some space around the tags container
-  },
-  tag: {
-    marginRight: 5,
-    marginBottom: 5,
-    fontSize: 18,
-    fontFamily: "IBMPlexSans-Regular",
-    color: "blue", // Add this line to make the text color blue
-    textAlign: "center", // Add this line to center the text
-  },
-  bottomModal: {
-    justifyContent: "flex-end",
-    margin: 0,
-    backgroundColor: "#fff", // Add this line to set the background color of the modal to white
-  },
-  modalContent: {
-    padding: 10,
-    justifyContent: "center",
-    alignItems: "center",
-    borderRadius: 4,
-    borderColor: "rgba(0, 0, 0, 0.1)",
-    maxHeight: "80%", // Add this line to set the maximum height of the modal content to 80%
-  },
-  closeButton: {
-    marginTop: 2, // Add this line to add some space above the close button
-    backgroundColor: "#007BFF", // Add this line to set the background color of the close button to blue
-    padding: 10, // Add this line to add some padding around the close button
-    borderRadius: 5, // Add this line to round the corners of the close button
-  },
-  closeButtonText: {
-    color: "#fff", // Add this line to set the text color of the close button to white
-  },
-});
 
 const dummyData = [
   {
@@ -291,6 +205,7 @@ const HomeComponent = () => {
   };
   const renderItem = ({ item }) => (
     <View style={styles.itemContainer}>
+      <Text style={styles.title}>{item.title}</Text>
       <TouchableOpacity onPress={() => setModalVisible(true)}>
         <Image
           source={{ uri: item.image }}
@@ -298,9 +213,11 @@ const HomeComponent = () => {
           resizeMode="contain"
         />
       </TouchableOpacity>
+      <Text style={styles.timestamp}>
+      {format(new Date(), 'h.mm a , dd MMM yy').toLocaleLowerCase()}
+    </Text>
       <View style={styles.textContainer}>
         <View>
-          <Text style={styles.title}>{item.title}</Text>
           {/* <Text style={styles.description}>{item.description}</Text> */}
           <View style={styles.tagsContainer}>
             {item.tags.map((tag: any, index: any) => (
@@ -309,17 +226,25 @@ const HomeComponent = () => {
               </Text>
             ))}
           </View>
-          <View style={styles.sharebtn}>
-            <Button
-              title="Share"
-              color={colors.shareButtonBackground}
+
+          <View style={styles.iconContainer}>
+            <Icon
+              name="facebook"
+              size={30}
+              color="#000"
               onPress={() => {
-                /* add your share functionality here */
+                Alert.alert("ICON ", "Message clicked ");
               }}
             />
+            
+            <Icon name="twitter" size={30} color="#000" />
+            <Icon name="bookmark" size={30} color="#000" />
+            <Icon name="heart" size={30} color="#000" />
+            <Icon name="share-2" size={30} color="#000" />
           </View>
         </View>
       </View>
+      <Divider />
       <Modal isVisible={isModalVisible} style={styles.bottomModal}>
         <View style={styles.modalContent}>
           <Image
@@ -327,6 +252,7 @@ const HomeComponent = () => {
             style={{ width: "100%", height: "100%" }}
             resizeMode="contain"
           />
+
           <TouchableOpacity onPress={toggleModal} style={styles.closeButton}>
             <Text style={styles.closeButtonText}>Close</Text>
           </TouchableOpacity>
@@ -341,6 +267,10 @@ const HomeComponent = () => {
         data={dummyData}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
+
+        // ItemSeparatorComponent={() => (
+        //   <View style={styles.separator} />
+        // )}
       />
     </View>
   );

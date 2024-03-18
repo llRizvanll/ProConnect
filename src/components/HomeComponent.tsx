@@ -7,7 +7,7 @@ import {
   Alert,
 } from "react-native";
 import Modal from "react-native-modal";
-import { Text, Divider } from "react-native-paper";
+import { Text, Divider, Chip } from "react-native-paper";
 import React from "react";
 import Icon from "react-native-vector-icons/Feather";
 import { format } from 'date-fns';
@@ -220,11 +220,11 @@ const HomeComponent = () => {
         <View>
           {/* <Text style={styles.description}>{item.description}</Text> */}
           <View style={styles.tagsContainer}>
-            {item.tags.map((tag: any, index: any) => (
-              <Text key={index} style={styles.tag}>
-                #{tag}
-              </Text>
-            ))}
+          {item.tags.map((tag: any, index: any) => (
+    <Chip key={index} style={styles.tag}>
+      #{tag}
+    </Chip>
+  ))}
           </View>
 
           <View style={styles.iconContainer}>

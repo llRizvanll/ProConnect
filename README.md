@@ -20,6 +20,12 @@
 
 <img src="assets/images/image5.png" alt="Settings Screen" width="200"/>
 
+## Contribute
+
+If you like this project and want to help me create more projects like this, **please consider** buying me a coffee:
+
+<a href="https://www.buymeacoffee.com/rizvanhawaldar" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-black.png" alt="Buy Me A Coffee" width=15% height=15%></a>
+
 ## Step 1: Start the Metro Server
 
 First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
@@ -74,3 +80,9 @@ Now that you have successfully run the app, let's modify it.
 ## Congratulations! :tada:
 
 You've successfully run and modified your React Native App. :partying_face:
+
+## Contribute
+
+If you like this project and want to help me create more projects like this, **please consider** buying me a coffee:
+
+<a href="https://www.buymeacoffee.com/rizvanhawaldar" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-black.png" alt="Buy Me A Coffee" width=15% height=15%></a>

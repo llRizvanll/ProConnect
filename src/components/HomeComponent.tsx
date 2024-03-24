@@ -10,9 +10,8 @@ import Modal from "react-native-modal";
 import { Text, Divider, Chip } from "react-native-paper";
 import React from "react";
 import Icon from "react-native-vector-icons/Feather";
-import { format } from 'date-fns';
-import { HomeComponentStyles as styles} from "../styles/HomeComponentStyles";
-
+import { format } from "date-fns";
+import { HomeComponentStyles as styles } from "../styles/HomeComponentStyles";
 
 const dummyData = [
   {
@@ -203,28 +202,43 @@ const HomeComponent = () => {
   const toggleModal = () => {
     setModalVisible(!isModalVisible);
   };
+
+  const handleInfoPress = (item) => {
+    Alert.alert(
+      "Source Info",
+      `Source of the message: ${item.title}`
+    );
+  };
+
   const renderItem = ({ item }) => (
     <View style={styles.itemContainer}>
       <Text style={styles.title}>{item.title}</Text>
+    
       <TouchableOpacity onPress={() => setModalVisible(true)}>
         <Image
           source={{ uri: item.image }}
           style={styles.image}
-          resizeMode="contain"
+          resizeMode="cover"
         />
+        
       </TouchableOpacity>
-      <Text style={styles.timestamp}>
-      {format(new Date(), 'h.mm a , dd MMM yy').toLocaleLowerCase()}
-    </Text>
+     <View style={{  flex:1, flexDirection:'row', justifyContent:'space-between', alignItems:'baseline' }}>
+     <Text style={styles.timestamp}>
+        {' Bengaluru, '+format(new Date(), "h.mm a,  dd MMM yy").toLocaleLowerCase()}
+      </Text>
+      <TouchableOpacity onPress={() => handleInfoPress(item)} style={{marginRight:4}}>
+      <Icon name="info" size={16} color="black" />
+    </TouchableOpacity>
+     </View>
       <View style={styles.textContainer}>
         <View>
           {/* <Text style={styles.description}>{item.description}</Text> */}
           <View style={styles.tagsContainer}>
-          {item.tags.map((tag: any, index: any) => (
-    <Chip key={index} style={styles.tag}>
-      #{tag}
-    </Chip>
-  ))}
+            {item.tags.map((tag: any, index: any) => (
+              <Chip key={index} style={styles.tag}>
+                #{tag}
+              </Chip>
+            ))}
           </View>
 
           <View style={styles.iconContainer}>
@@ -236,12 +250,13 @@ const HomeComponent = () => {
                 Alert.alert("ICON ", "Message clicked ");
               }}
             />
-            
+
             <Icon name="twitter" size={30} color="#000" />
             <Icon name="bookmark" size={30} color="#000" />
             <Icon name="heart" size={30} color="#000" />
             <Icon name="share-2" size={30} color="#000" />
           </View>
+          
         </View>
       </View>
       <Divider />

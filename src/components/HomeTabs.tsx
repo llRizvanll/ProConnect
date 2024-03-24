@@ -13,14 +13,14 @@ const HomeTabs = () => {
             screenOptions={{
                 tabBarStyle: {
                   backgroundColor: colors.white,
-                  elevation: 5, // Shadow for Android
+                  elevation: 4, // Shadow for Android
                   shadowOpacity: 0.5, // Shadow for iOS
-                  margin: 10,
+                  margin: 2,
                   padding: 2,
                 },
                 tabBarLabelStyle: {
                   textAlign: 'center',
-                  fontSize: 20,
+                  fontSize: 14,
                   fontFamily: AppConstants.fontFamily,
                 },
                 tabBarIndicatorStyle: {

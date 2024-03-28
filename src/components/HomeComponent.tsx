@@ -12,6 +12,8 @@ import React from "react";
 import Icon from "react-native-vector-icons/Feather";
 import { format } from "date-fns";
 import { HomeComponentStyles as styles } from "../styles/HomeComponentStyles";
+import { RootState, useAppDispatch, useAppSelector } from "../app/store";
+import { setBookmark } from "../app/slices/bookmarkSlice";
 
 const dummyData = [
   {
@@ -199,6 +201,25 @@ const dummyData = [
 const HomeComponent = () => {
   const [isModalVisible, setModalVisible] = React.useState(false);
 
+  const dispatch = useAppDispatch();
+
+  const saveToBookMark = (item) => {
+    dispatch(setBookmark({
+      bookmarks: bookmarkState.bookmarks.concat(item.title),
+      userId: 'newUserId',
+      deviceId: 'newDeviceId',
+      bookmarkType: 'newBookmarkType',
+    }));
+  };
+  
+  const bookmarkState = useAppSelector((state: RootState) => state.bookmarkSlice);
+
+  // Now you can access the properties of the bookmark state
+  console.log(bookmarkState.bookmarks);
+  console.log(bookmarkState.userId);
+  console.log(bookmarkState.deviceId);
+  console.log(bookmarkState.bookmarkType);
+
   const toggleModal = () => {
     setModalVisible(!isModalVisible);
   };
@@ -252,7 +273,9 @@ const HomeComponent = () => {
             />
 
             <Icon name="twitter" size={30} color="#000" />
-            <Icon name="bookmark" size={30} color="#000" />
+            <Icon name="bookmark" size={30} color="#000" onPress={() => {
+              saveToBookMark(item)
+            }}/>
             <Icon name="heart" size={30} color="#000" />
             <Icon name="share-2" size={30} color="#000" />
           </View>

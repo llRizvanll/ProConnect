@@ -6,6 +6,7 @@ INJECTED from /Users/rizvan/Thor/react-native-apps/ProConnect/android/app/src/de
 INJECTED from /Users/rizvan/Thor/react-native-apps/ProConnect/android/app/src/debug/AndroidManifest.xml:2:1-9:12
 INJECTED from /Users/rizvan/Thor/react-native-apps/ProConnect/android/app/src/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.react:flipper-integration:0.73.6] /Users/rizvan/.gradle/caches/transforms-3/7ceec762c322db3b2ee74240d8e71306/transformed/jetified-flipper-integration-0.73.6-debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:react-native-mmkv] /Users/rizvan/Thor/react-native-apps/ProConnect/node_modules/react-native-mmkv/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:react-native-pager-view] /Users/rizvan/Thor/react-native-apps/ProConnect/node_modules/react-native-pager-view/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:react-native-safe-area-context] /Users/rizvan/Thor/react-native-apps/ProConnect/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:react-native-vector-icons] /Users/rizvan/Thor/react-native-apps/ProConnect/node_modules/react-native-vector-icons/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
@@ -163,6 +164,8 @@ INJECTED from /Users/rizvan/Thor/react-native-apps/ProConnect/android/app/src/de
 INJECTED from /Users/rizvan/Thor/react-native-apps/ProConnect/android/app/src/debug/AndroidManifest.xml
 MERGED from [com.facebook.react:flipper-integration:0.73.6] /Users/rizvan/.gradle/caches/transforms-3/7ceec762c322db3b2ee74240d8e71306/transformed/jetified-flipper-integration-0.73.6-debug/AndroidManifest.xml:5:5-44
 MERGED from [com.facebook.react:flipper-integration:0.73.6] /Users/rizvan/.gradle/caches/transforms-3/7ceec762c322db3b2ee74240d8e71306/transformed/jetified-flipper-integration-0.73.6-debug/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-mmkv] /Users/rizvan/Thor/react-native-apps/ProConnect/node_modules/react-native-mmkv/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-mmkv] /Users/rizvan/Thor/react-native-apps/ProConnect/node_modules/react-native-mmkv/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:react-native-pager-view] /Users/rizvan/Thor/react-native-apps/ProConnect/node_modules/react-native-pager-view/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:react-native-pager-view] /Users/rizvan/Thor/react-native-apps/ProConnect/node_modules/react-native-pager-view/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:react-native-safe-area-context] /Users/rizvan/Thor/react-native-apps/ProConnect/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44

@@ -9,9 +9,11 @@ import {
     useSelector,
   } from 'react-redux';
 import rootReducer from './slices/index';
+import storageMiddleware from './middleware/storageMiddleware';
 
 const store = configureStore({
   reducer: rootReducer,
+  middleware: getDefaultMiddleware => getDefaultMiddleware().concat(storageMiddleware),
 });
 
 export type AppDispatch = typeof store.dispatch;

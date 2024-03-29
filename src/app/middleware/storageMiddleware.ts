@@ -5,11 +5,12 @@ import { persistedStorage } from '../mmkv';
 
 const storageMiddleware: Middleware = ({ getState }) => next => (action: any) => {
     const result = next(action);
-    console.log('storageMiddleware', action.type);
+    //console.log('storageMiddleware', action.type);
     if (action.type.startsWith('bookmark/')) {
         const newState = getState();
-        persistedStorage.setItem('bookmarks', JSON.stringify(newState.bookmarks));
-        console.log('bookmarks saved to storage');
+        //console.log('newState', newState);
+        persistedStorage.setItem('bookmarks', JSON.stringify(newState.bookmarkSlice.bookmarks));
+        //console.log('bookmarks saved to storage');
     }
 
     return result;

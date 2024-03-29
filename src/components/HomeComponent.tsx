@@ -14,6 +14,7 @@ import { format } from "date-fns";
 import { HomeComponentStyles as styles } from "../styles/HomeComponentStyles";
 import { RootState, useAppDispatch, useAppSelector } from "../app/store";
 import { setBookmark } from "../app/slices/bookmarkSlice";
+import { persistedStorage } from "../app/mmkv";
 
 const dummyData = [
   {
@@ -203,16 +204,25 @@ const HomeComponent = () => {
 
   const dispatch = useAppDispatch();
 
-  const saveToBookMark = (item) => {
-    dispatch(setBookmark({
-      bookmarks: bookmarkState.bookmarks.concat(item.title),
-      userId: 'newUserId',
-      deviceId: 'newDeviceId',
-      bookmarkType: 'newBookmarkType',
-    }));
+  const saveToBookMark = async (item) => {
+    dispatch(
+      setBookmark({
+        bookmarks: bookmarkState.bookmarks.concat(item.title),
+        userId: "newUserId",
+        deviceId: "newDeviceId",
+        bookmarkType: "newBookmarkType",
+      })
+    );
+
+    // Get the saved bookmarks from storage
+    const savedBookmarksString = await persistedStorage.getItem('bookmarks');
+    const savedBookmarks = savedBookmarksString ? JSON.parse(savedBookmarksString) : null;
+    //console.log('savedBookmarks', savedBookmarks, ' -- ', persistedStorage.containsKey('bookmarks'));
   };
-  
-  const bookmarkState = useAppSelector((state: RootState) => state.bookmarkSlice);
+
+  const bookmarkState = useAppSelector(
+    (state: RootState) => state.bookmarkSlice
+  );
 
   // Now you can access the properties of the bookmark state
   console.log(bookmarkState.bookmarks);
@@ -225,32 +235,39 @@ const HomeComponent = () => {
   };
 
   const handleInfoPress = (item) => {
-    Alert.alert(
-      "Source Info",
-      `Source of the message: ${item.title}`
-    );
+    Alert.alert("Source Info", `Source of the message: ${item.title}`);
   };
 
   const renderItem = ({ item }) => (
     <View style={styles.itemContainer}>
       <Text style={styles.title}>{item.title}</Text>
-    
+
       <TouchableOpacity onPress={() => setModalVisible(true)}>
         <Image
           source={{ uri: item.image }}
           style={styles.image}
           resizeMode="cover"
         />
-        
       </TouchableOpacity>
-     <View style={{  flex:1, flexDirection:'row', justifyContent:'space-between', alignItems:'baseline' }}>
-     <Text style={styles.timestamp}>
-        {' Bengaluru, '+format(new Date(), "h.mm a,  dd MMM yy").toLocaleLowerCase()}
-      </Text>
-      <TouchableOpacity onPress={() => handleInfoPress(item)} style={{marginRight:4}}>
-      <Icon name="info" size={16} color="black" />
-    </TouchableOpacity>
-     </View>
+      <View
+        style={{
+          flex: 1,
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "baseline",
+        }}
+      >
+        <Text style={styles.timestamp}>
+          {" Bengaluru, " +
+            format(new Date(), "h.mm a,  dd MMM yy").toLocaleLowerCase()}
+        </Text>
+        <TouchableOpacity
+          onPress={() => handleInfoPress(item)}
+          style={{ marginRight: 4 }}
+        >
+          <Icon name="info" size={16} color="black" />
+        </TouchableOpacity>
+      </View>
       <View style={styles.textContainer}>
         <View>
           {/* <Text style={styles.description}>{item.description}</Text> */}
@@ -273,13 +290,17 @@ const HomeComponent = () => {
             />
 
             <Icon name="twitter" size={30} color="#000" />
-            <Icon name="bookmark" size={30} color="#000" onPress={() => {
-              saveToBookMark(item)
-            }}/>
+            <Icon
+              name="bookmark"
+              size={30}
+              color="#000"
+              onPress={() => {
+                saveToBookMark(item);
+              }}
+            />
             <Icon name="heart" size={30} color="#000" />
             <Icon name="share-2" size={30} color="#000" />
           </View>
-          
         </View>
       </View>
       <Divider />
